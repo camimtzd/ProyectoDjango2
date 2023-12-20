@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% block title %}Portfolio {% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/equipo2.jpg' %}{% endblock %}
+{% block headers %}
+<h1>¿Quiénes somos?</h1>
+<span class="subheading">Te contamos un poco sobre nosotros</span>
+{% endblock %}
+
+{% block content%}
+
+{% for project in projects %}
+
+<!-- Proyecto -->
+<div class="row project">  	
+    <div div class="col-sm-5 mb-3 mb-sm-0">
+        <img class="img-fluid" src="{{project.image.url}}" alt="persona">
+    </div>
+    <div class="card border-primary" style="max-width: 45rem; background-color: #609dc9; padding: 4em;">
+        <h2 class="section-heading title">{{project.title}}</h2>   
+    <p class="text-justify">{{project.descripcion}}</p>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
